@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/drawable_image3.png.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/drawable/image3.png"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/layout_activity_help_me.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/layout/activity_help_me.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/layout_activity_booking.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/layout/activity_booking.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/drawable_image1.png.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/drawable/image1.png"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.officebooking.app-merged_res-31:/drawable_image3.png.flat",
+        "source": "com.example.officebooking.app-main-33:/drawable/image3.png"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/layout_activity_start.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/layout/activity_start.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/layout_activity_account.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/layout/activity_account.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/layout_activity_login.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/drawable_image2.png.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/drawable/image2.png"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/drawable_help.png.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/drawable/help.png"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/drawable_latest_status.png.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/drawable/latest_status.png"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/xml_backup_rules.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-merged_res-31:/layout_activity_register.xml.flat",
+        "source": "/Users/oliver/.gradle/daemon/8.0/com.example.officebooking.app-main-33:/layout/activity_register.xml"
+    }
+]
