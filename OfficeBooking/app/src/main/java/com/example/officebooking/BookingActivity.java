@@ -25,13 +25,13 @@ private Button back,bookingNew,bookingManage;
         bookingNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookingActivity.this,NewBookingActivity.class));
+                startActivity(new Intent(BookingActivity.this,ActivityManageBooking.class));
             }
         });
         bookingManage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookingActivity.this,ActivityManageBooking.class));
+                startActivity(new Intent(BookingActivity.this,NewBookingActivity.class));
             }
         });
     }
