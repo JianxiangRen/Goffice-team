@@ -17,7 +17,7 @@ public class AddClassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_class);
         bookingBack = findViewById(R.id.bookingBack);
-        imageView3 = findViewById(R.id.imageView3);
+        imageView3 = findViewById(R.id.updatestatus);
         bookingBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

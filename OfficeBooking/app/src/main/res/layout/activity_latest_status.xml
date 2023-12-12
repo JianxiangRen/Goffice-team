@@ -40,7 +40,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/image3"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/updatestatus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"

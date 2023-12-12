@@ -25,7 +25,7 @@ public class NewBookingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_booking);
         go_back = findViewById(R.id.go_back);
         see_history = findViewById(R.id.see_history);
-        re = findViewById(R.id.re);
+        re = findViewById(R.id.statusList);
         adapter = new BookAdapter(R.layout.adapter_book);
         re.setLayoutManager(new LinearLayoutManager(this));
         re.setAdapter(adapter);

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.example.officebooking.adapter.BookAdapter;
 import com.example.officebooking.adapter.BookHistoryAdapter;
 import com.example.officebooking.bean.BookBean;
 
@@ -25,7 +24,7 @@ public class ActivityBookHistory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_history);
-        re = findViewById(R.id.re);
+        re = findViewById(R.id.statusList);
         bookingBack = findViewById(R.id.bookingBack);
         bookingBack.setOnClickListener(new View.OnClickListener() {
             @Override
