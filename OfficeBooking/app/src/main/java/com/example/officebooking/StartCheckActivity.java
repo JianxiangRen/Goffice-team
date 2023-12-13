@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 public class StartCheckActivity extends AppCompatActivity {
     private Button bookingBack,done;
     @Override

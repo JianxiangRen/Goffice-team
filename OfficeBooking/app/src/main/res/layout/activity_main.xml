@@ -28,7 +28,7 @@
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="156dp"
+        android:layout_marginEnd="165dp"
         android:src="@drawable/image2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/upperBackground" />
@@ -121,8 +121,13 @@
             android:textSize="18dp"
             android:textStyle="bold" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/statusList"
+            android:layout_width="match_parent"
+            android:layout_height="244dp" />
+
         <Button
-            android:id="@+id/mainBooking6"
+            android:id="@+id/see"
             android:layout_width="347dp"
             android:layout_height="33dp"
             android:background="@drawable/radius1"
@@ -132,11 +137,6 @@
             android:textColor="@color/red"
             android:textSize="12sp"
             android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/statusList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
     </LinearLayout>
 

@@ -28,6 +28,8 @@ public class ActivityManageBooking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_manage);
         list = new ArrayList<>();
+
+
         edt_code = findViewById(R.id.edt_code);
         re = findViewById(R.id.statusList);
         add = findViewById(R.id.add);
@@ -35,6 +37,10 @@ public class ActivityManageBooking extends AppCompatActivity {
         adapter = new ClassAdapter(R.layout.class_item);
         re.setLayoutManager(new LinearLayoutManager(this));
         re.setAdapter(adapter);
+        if (((App) getApplication()).list.size()>0) {
+            list.addAll(((App) getApplication()).list);
+            adapter.setNewData(list);
+        }
         bookingBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,30 +50,54 @@ public class ActivityManageBooking extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(edt_code.getText().toString().equals("CS101")){
+                if (edt_code.getText().toString().equals("CS101")) {
                     list.add("CS101 - Intro To Programming");
-                }
-                else if(edt_code.getText().toString().equals("CS102")){
+                } else if (edt_code.getText().toString().equals("CS102")) {
                     list.add("CS102 - Intro To Programming");
-                }
-                else if(edt_code.getText().toString().equals("CS103")){
+                } else if (edt_code.getText().toString().equals("CS103")) {
                     list.add("CS103 - Intro To Programming");
-                }
-                else if(edt_code.getText().toString().equals("CS104")){
+                } else if (edt_code.getText().toString().equals("CS104")) {
                     list.add("CS104 - Intro To Programming");
-                }
-                else if(edt_code.getText().toString().equals("CS105")){
+                } else if (edt_code.getText().toString().equals("CS105")) {
                     list.add("CS105 - Intro To Programming");
                 }
 
                 adapter.setNewData(list);
+                ((App) getApplication()).list.clear();
+                ((App) getApplication()).list.addAll(list);
             }
         });
         adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                startActivity(new Intent(ActivityManageBooking.this,AddClassActivity.class));
+                startActivity(new Intent(ActivityManageBooking.this, AddClassActivity.class));
             }
         });
+
+//        if (savedInstanceState != null) {
+//            list = savedInstanceState.getStringArrayList("classList");
+//            if (list != null) {
+//                adapter.setNewData(list);
+//            }
+//        }
     }
+
+
+
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        // 保存列表状态
+//        outState.putStringArrayList("classList", (ArrayList<String>) list);
+//    }
+//
+//    @Override
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        // 恢复列表状态
+//        list = savedInstanceState.getStringArrayList("classList");
+//        if (list != null) {
+//            adapter.setNewData(list);
+//        }
+//    }
 }

@@ -97,7 +97,7 @@
             android:textColor="@color/black"
             android:layout_marginLeft="@dimen/sp_14"
             android:layout_marginRight="@dimen/sp_14"
-            android:text="According to your GPS location, you have notyet reached the vicinity of the designatedlocation and cannot start the queue for you."
+            android:text="According to your GPS location, you have not yet reached the vicinity of the designatedlocation and cannot start the queue for you."
             app:layout_constraintTop_toBottomOf="@+id/tv_3"
             android:layout_marginTop="6dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -119,6 +119,7 @@
                 android:textColor="@color/white"
                 android:textSize="9dp"/>
             <TextView
+                android:id="@+id/distance_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="588m"
@@ -127,21 +128,7 @@
                 android:layout_marginTop="@dimen/dp_10"
                 android:textSize="34dp"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/cancel_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/bookingBack"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:textStyle="bold"
-            android:textColor="@color/red"
-            android:textAllCaps="false"
-            android:background="@drawable/radius1"
-            android:layout_marginBottom="24dp"
-            android:text="Go back"/>
+
         <Button
             android:id="@+id/bookingBack"
             android:layout_width="0dp"
