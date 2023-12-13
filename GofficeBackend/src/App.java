@@ -15,8 +15,8 @@ import org.json.JSONObject;
 public class App {
 
     private static UserService userService = new UserService();
-
     public static void main(String[] args) throws IOException {
+        
         // Create an HTTP server listening on port 8000
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
 
