@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.officebooking.adapter.BookAdapter;
+import com.example.officebooking.adapter.MarkDownAdapter;
 import com.example.officebooking.bean.BookBean;
 
 import java.util.ArrayList;
@@ -18,7 +19,9 @@ import java.util.List;
 public class NewBookingActivity extends AppCompatActivity {
     private BookAdapter adapter;
     private RecyclerView re;
-    private Button go_back,see_history;
+    private Button go_back, see_history;
+    private MarkDownAdapter md;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +33,7 @@ public class NewBookingActivity extends AppCompatActivity {
         re.setLayoutManager(new LinearLayoutManager(this));
         re.setAdapter(adapter);
 
-        List<BookBean> list = new ArrayList<>();
-        list.add(new BookBean("Prof. John Smith","·  Course: CS101 - Introduction to \nProgramming",
-                "·   Date: 2023-10-16","·  Time: 2:00 PM -2:30 PM",
-                "·  Location: Room 204, Science \nBuilding","·  Purpose: Discuss CS101 \n assignment"));
-        list.add(new BookBean("Dr. Sarah Johnson","·  Course: CS301- Database \n Management",
-                "·   Date: 2023-10-17","·  Time: 11:30 AM12:00 PM",
-                "·  Location: Room 302, Computer \n Science Department",
-                "·  Purpose: Seek clarification on \n research project"));
-        list.add(new BookBean("Ms. Emily Davis","·  Course: BA201-Marketing \n Strategies",
-                "·   Date:2023-10-18","·  Time: 3:00 PM3:30 PM","·  Location: Office 105, Business \n School",
-                "·  Purpose: Review resume for \n internship application"));
-        adapter.setNewData(list);
+        md = new MarkDownAdapter(this);
 
         go_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +44,37 @@ public class NewBookingActivity extends AppCompatActivity {
         see_history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NewBookingActivity.this,ActivityBookHistory.class));
+                startActivity(new Intent(NewBookingActivity.this, ActivityBookHistory.class));
             }
         });
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Refresh the content every time the activity resumes
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String url = "https://file.goffice.fun/d/opt/Goffice/MD_File/activity_new_booking.md"; // Replace with your Markdown file URL
+                String markdownContent = md.readMarkdownFromUrl(url);
+
+                // Since you cannot update the UI from a background thread, use runOnUiThread
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Update your UI here with the markdownContent
+
+                        List<BookBean> list = new ArrayList<>();
+                        list.add(new BookBean(markdownContent,"",
+                                "","",
+                                "",""));
+                        adapter.setNewData(list);
+
+                    }
+                });
+            }
+        }).start();
     }
 }

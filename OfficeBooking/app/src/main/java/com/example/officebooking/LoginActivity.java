@@ -25,9 +25,12 @@ private String id,password;
 //                判定后登录
                 id=idEditText.getText().toString().trim();
                 password=passwordEditText.getText().toString().trim();
+                if (id.equals("alan1") && password.equals("1234567")){
+                    Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
 //          登录
-                Intent intent=new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+
             }
         });
     }

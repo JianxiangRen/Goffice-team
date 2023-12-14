@@ -12,7 +12,10 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 import com.example.officebooking.adapter.BookAdapter;
@@ -21,6 +24,7 @@ import com.example.officebooking.bean.BookBean;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +32,27 @@ public class MainActivity extends AppCompatActivity {
     private Button booking,check,account,seemore;
     private BookAdapter adapter;
     private RecyclerView re;
+    private MarkDownAdapter md;
+//    public static String downloadFile(Context context, String fileName) {
+//        String baseUrl = "https://file.goffice.fun/d/opt/Goffice/MD_File/";
+//        // Use getExternalFilesDir to get a writable directory
+//        File targetDirectory = new File(context.getExternalFilesDir(null), "md-file");
+//
+//        try {
+//            URL fileUrl = new URL(baseUrl + fileName + ".md");
+//            File targetFile = new File(targetDirectory, fileName + ".md");
+//            targetDirectory.mkdirs(); // Make sure the directory exists
+//            try (BufferedInputStream in = new BufferedInputStream(fileUrl.openStream());
+//                 FileOutputStream fileOutputStream = new FileOutputStream(targetFile)) {
+//                // Your code to write to the file
+//            }
+//            return targetFile.getAbsolutePath().toString();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return "Error downloading file";
+//        }
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,18 +67,9 @@ public class MainActivity extends AppCompatActivity {
         re.setLayoutManager(new LinearLayoutManager(this));
         re.setAdapter(adapter);
 
-        List<BookBean> list = new ArrayList<>();
-        list.add(new BookBean("Prof. John Smith","·  Course: CS101 - Introduction to \nProgramming",
-                "·   Date: 2023-10-16","·  Time: 2:00 PM -2:30 PM",
-                "·  Location: Room 204, Science \nBuilding","·  Purpose: Discuss CS101 \n assignment"));
-        list.add(new BookBean("Dr. Sarah Johnson","·  Course: CS301- Database \n Management",
-                "·   Date: 2023-10-17","·  Time: 11:30 AM12:00 PM",
-                "·  Location: Room 302, Computer \n Science Department",
-                "·  Purpose: Seek clarification on \n research project"));
-        list.add(new BookBean("Ms. Emily Davis","·  Course: BA201-Marketing \n Strategies",
-                "·   Date:2023-10-18","·  Time: 3:00 PM3:30 PM","·  Location: Office 105, Business \n School",
-                "·  Purpose: Review resume for \n internship application"));
-        adapter.setNewData(list);
+        md = new MarkDownAdapter(this);
+//        String path = downloadFile(this,"text");
+//        String mdstring = md.readMarkdownFromUrl("https://file.goffice.fun/opt/Goffice/MD_File/activity_booking.md");
 
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +114,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Refresh the content every time the activity resumes
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String url = "https://file.goffice.fun/d/opt/Goffice/MD_File/activity_main.md"; // Replace with your Markdown file URL
+                String markdownContent = md.readMarkdownFromUrl(url);
+
+                // Since you cannot update the UI from a background thread, use runOnUiThread
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Update your UI here with the markdownContent
+
+                        List<BookBean> list = new ArrayList<>();
+                        list.add(new BookBean(markdownContent,"",
+                                "","",
+                                "",""));
+                        adapter.setNewData(list);
+
+                    }
+                });
+            }
+        }).start();
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
