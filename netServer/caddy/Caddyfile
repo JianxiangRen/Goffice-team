@@ -1,0 +1,17 @@
+goffice.fun {
+    root * /opt/Goffice/MainPage
+    file_server
+}
+
+http://api.goffice.fun {
+    reverse_proxy :8000
+}
+
+file.goffice.fun {
+    reverse_proxy :5244
+}
+
+md.goffice.fun {
+    root * /opt/Goffice/MD_Set
+    file_server
+}
