@@ -71,17 +71,33 @@ public class UserService {
 
     // DELETE
     public boolean deleteUser(String userID) {
-        String sql = "DELETE FROM users WHERE userID = ?";
+    // Check if the user exists
+        String checkSql = "SELECT COUNT(*) FROM users WHERE userID = ?";
         try (Connection conn = this.connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, userID);
-            pstmt.executeUpdate();
-            return true;
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+         PreparedStatement pstmtCheck = conn.prepareStatement(checkSql)) {
+        pstmtCheck.setString(1, userID);
+        ResultSet rs = pstmtCheck.executeQuery();
+        if (rs.next() && rs.getInt(1) == 0) {
+            // User does not exist
             return false;
         }
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+        return false;
     }
+
+    // If user exists, proceed with deletion
+    String deleteSql = "DELETE FROM users WHERE userID = ?";
+    try (Connection conn = this.connect();
+         PreparedStatement pstmtDelete = conn.prepareStatement(deleteSql)) {
+        pstmtDelete.setString(1, userID);
+        int affectedRows = pstmtDelete.executeUpdate();
+        return affectedRows > 0;
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+        return false;
+    }
+}
 
     // LOGIN
     public boolean loginUser(String userID, String plainPassword) {

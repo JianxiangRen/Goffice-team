@@ -36,22 +36,26 @@ public class App {
         return (exchange -> {
             if ("POST".equals(exchange.getRequestMethod())) {
                 JSONObject userJson = new JSONObject(new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8));
-
+    
+                String firstName = userJson.optString("firstName", "");
+                String lastName = userJson.optString("lastName", "");
+                String emailAddr = userJson.optString("emailAddr", "");
+    
                 User user = new User(
                         userJson.getString("userID"),
                         userJson.getString("password"),
-                        userJson.getString("firstName"),
-                        userJson.getString("lastName"),
-                        userJson.getString("emailAddr")
+                        firstName,
+                        lastName,
+                        emailAddr
                 );
-
+    
                 boolean success = userService.addUser(user);
                 sendResponse(exchange, success ? 201 : 400, success ? "User registered successfully" : "Failed to register user");
             } else {
                 sendResponse(exchange, 405, "Method Not Allowed");
             }
         });
-    }
+    }         
 
     private static HttpHandler handleLogin() {
         return (exchange -> {
@@ -96,14 +100,24 @@ public class App {
             if ("DELETE".equals(exchange.getRequestMethod())) {
                 Map<String, String> queryParams = queryToMap(exchange.getRequestURI().getQuery());
                 String userID = queryParams.get("userID");
-
+    
+                boolean userExists = userService.getUser(userID) != null;
+                if (!userExists) {
+                    sendResponse(exchange, 400, "User does not exist");
+                    return;
+                }
+    
                 boolean success = userService.deleteUser(userID);
-                sendResponse(exchange, success ? 200 : 400, success ? "User deleted successfully" : "Failed to delete user");
+                if (success) {
+                    sendResponse(exchange, 200, "User deleted successfully");
+                } else {
+                    sendResponse(exchange, 400, "Failed to delete user");
+                }
             } else {
                 sendResponse(exchange, 405, "Method Not Allowed");
             }
         });
-    }
+    }    
 
     private static void sendResponse(HttpExchange exchange, int statusCode, String responseText) throws IOException {
         exchange.sendResponseHeaders(statusCode, responseText.getBytes().length);
